@@ -32,7 +32,7 @@ System.out.println("If so, please enter 1");
     java.util.Random rand = new java.util.Random();
     for(int i = 0; i < Board.length; i++) {
       for(int a=0; a< Board.length;a++){
-        Board[i][a] = rand.nextInt(50);      
+        Board[i][a] = rand.nextInt(25);      
       }
     }
   }
