@@ -1,10 +1,25 @@
 public class BingoDemo{
+public static int[] row = new int[25];
+public static int[] column= new int[25];
+public static final int bingo = 1;
   public static void main (String[]args){
 	int Continue=1;
 	  int[][] board=new int[5][5];
 	while (Continue==1){
     	board[][]=bingoBoard();
   	//play the game
+	System.out.println("Enter a number or enter 0 to quit");
+  	int number=0;
+  	int count = 0;
+  	number = TextIO.getlnInt();
+  	while (number!=0){
+        	int[] location=test(board,number);
+        	row[count]= location[0];
+        	column[count]= location[1];
+        	count++;
+        	System.out.println("Enter a number or enter 0 to quit");
+        	number = TextIO.getlnInt();
+      	}
       System.out.println("*   *            *****         *             *             *********            *********                 ");
       System.out.println("*       *          *           * *           *           *                    *           *    ");
       System.out.println("*         *        *           *   *         *          *                    *             *           ");
@@ -66,7 +81,7 @@ public static void printSquare(){
 
   }
 
-public static final int bingo = 1;
+
 public static void main(String[] args){
   int[] rows = {1,2,3,4,5};
   int[] columns={1,1,1,1,1};
@@ -123,5 +138,30 @@ public static int checkDiagonal(int[] rows,int[] columns){
   else{
     return 0;
   }
+}
+public static int[] test(int[][] board,int number){
+  int[] location = new int[2];
+  int num = TextIO.getlnInt();
+  for (int i=0; i<5; i++){
+    for (int j=0; j<5; j++){
+      if (num == Board[i][j]){
+        location[0] = i;
+        location[1] = j;
+      }else{
+      }
+    }
+  }
+  return location;
+}
+
+public static int[][] bingoBoard(){
+    int[][] board = new int[5][5];
+    java.util.Random rand = new java.util.Random();
+    for(int i = 0; i < board.length; i++) {
+      for(int a=0; a< board.length;a++){
+        board[i][a] = rand.nextInt(25);
+      }
+    }
+  return board;
 }
 }//end of the class
