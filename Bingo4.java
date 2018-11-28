@@ -5,16 +5,16 @@ public class BingoDemo{
 	while (Continue==1){
     	board[][]=bingoBoard();
   	//play the game
-  	System.out.println("* * *       *****     	*         	*         	*********        	*********             	");
-  	System.out.println("*   	*      	*       	* *       	*       	*                	*          	*	");
-  	System.out.println("*     	*    	*       	*   *     	*      	*                	*              	*       	");
-  	System.out.println("*    	*     	*        	*  	 *     	*      	*                	*             	*    	");
-  	System.out.println("* *	*       	*       	*    	* 	  *      	*                	*             	*    	");
-  	System.out.println("*    	*     	*       	*       *   *      	*    	******* 	  *             	*   	");
-  	System.out.println("*      	*   	*       	*       	* *      	*         	*    	*             	*   	");
-  	System.out.println("*     	*    	*       	*         	*       	*       	*     	*         	*");
-  	System.out.println("* * *      	*****     	*         	*         	**********       	*********         	");
-  	System.out.println("Do you want to play Bingo again?");
+      System.out.println("*   *            *****         *             *             *********            *********                 ");
+      System.out.println("*       *          *           * *           *           *                    *           *    ");
+      System.out.println("*         *        *           *   *         *          *                    *             *           ");
+      System.out.println("*        *         *           *     *       *          *                    *             *        ");
+      System.out.println("* *    *           *           *       *     *          *                    *             *        ");
+      System.out.println("*        *         *           *         *   *          *        *****       *             *       ");
+      System.out.println("*          *       *           *           * *          *            *       *             *       ");
+      System.out.println("*         *        *           *             *           *           *        *           *");
+      System.out.println("*     *          *****         *             *             **********           *********             ");
+      System.out.println("Do you want to play Bingo again?");
 System.out.println("If so, please enter 1");
   	Continue=TextIO.getlnInt();
 	}
