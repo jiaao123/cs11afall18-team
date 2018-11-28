@@ -38,6 +38,34 @@ System.out.println("If so, please enter 1");
   }
 
 
+public static void printSquare(){
+
+      System.out.print("     ");
+      for (int i=0;i<=5;i++){
+        System.out.printf("-----");//first line
+      }
+        System.out.println();
+
+      for (int j=1;j<=5;j++){
+        System.out.printf("%6s","|");
+
+          for (int i=1;i<=5;i++){
+            System.out.print(j+"/"+i+"  |");
+          }
+
+          System.out.println();
+          System.out.print("     ");
+
+          for (int i=0;i<=5;i++){
+          System.out.printf("-----");
+          }
+          System.out.println();
+
+      }
+      System.out.println();
+
+  }
+
 public static final int bingo = 1;
 public static void main(String[] args){
   int[] rows = {1,2,3,4,5};
