@@ -1,4 +1,4 @@
-public class Bingo4{
+public class Bingo{
 public static final int bingo = 1;
 public static void main(String[] args){
   int[] rows = {1,2,3,4,5};
@@ -7,7 +7,6 @@ public static void main(String[] args){
   System.out.println(a);
 
 }
-
 
 
 public static int checkRows(int[] rows){
