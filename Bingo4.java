@@ -1,4 +1,40 @@
-public class Bingo{
+public class BingoDemo{
+  public static void main (String[]args){
+	int Continue=1;
+	while (Continue==1){
+    bingoBoard();
+  	//play the game
+  	System.out.println("* * *       *****     	*         	*         	*********        	*********             	");
+  	System.out.println("*   	*      	*       	* *       	*       	*                	*          	*	");
+  	System.out.println("*     	*    	*       	*   *     	*      	*                	*              	*       	");
+  	System.out.println("*    	*     	*        	*  	 *     	*      	*                	*             	*    	");
+  	System.out.println("* *	*       	*       	*    	* 	  *      	*                	*             	*    	");
+  	System.out.println("*    	*     	*       	*       *   *      	*    	******* 	  *             	*   	");
+  	System.out.println("*      	*   	*       	*       	* *      	*         	*    	*             	*   	");
+  	System.out.println("*     	*    	*       	*         	*       	*       	*     	*         	*");
+  	System.out.println("* * *      	*****     	*         	*         	**********       	*********         	");
+  	System.out.println("Do you want to play Bingo again?");
+System.out.println("If so, please enter 1");
+  	Continue=TextIO.getlnInt();
+	}
+	if(Continue!=1){
+  	System.out.println("quit the game");
+	 }
+  }
+
+
+
+  public static void bingoBoard(){
+    int[][] Board = new int[5][5];
+    java.util.Random rand = new java.util.Random();
+    for(int i = 0; i < Board.length; i++) {
+      for(int a=0; a< Board.length;a++){
+        Board[i][a] = rand.nextInt(50);      
+      }
+    }
+  }
+
+
 public static final int bingo = 1;
 public static void main(String[] args){
   int[] rows = {1,2,3,4,5};
