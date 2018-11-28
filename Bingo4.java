@@ -2,7 +2,7 @@ public class BingoDemo{
   public static void main (String[]args){
 	int Continue=1;
 	while (Continue==1){
-    bingoBoard();
+    	bingoBoard();
   	//play the game
   	System.out.println("* * *       *****     	*         	*         	*********        	*********             	");
   	System.out.println("*   	*      	*       	* *       	*       	*                	*          	*	");
@@ -19,8 +19,10 @@ System.out.println("If so, please enter 1");
 	}
 	if(Continue!=1){
   	System.out.println("quit the game");
-	 }
+	}
+    }
   }
+}
 
 
 
