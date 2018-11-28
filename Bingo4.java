@@ -34,7 +34,7 @@ System.out.println("If so, please enter 1");
       for(int a=0; a< Board.length;a++){
         Board[i][a] = rand.nextInt(25);      
       }
-    }
+    }return Board;
   }
 
 
