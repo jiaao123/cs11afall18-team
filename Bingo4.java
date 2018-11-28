@@ -1,8 +1,9 @@
 public class BingoDemo{
   public static void main (String[]args){
 	int Continue=1;
+	  int[][] board=new int[5][5];
 	while (Continue==1){
-    	bingoBoard();
+    	board[][]=bingoBoard();
   	//play the game
   	System.out.println("* * *       *****     	*         	*         	*********        	*********             	");
   	System.out.println("*   	*      	*       	* *       	*       	*                	*          	*	");
@@ -26,7 +27,7 @@ System.out.println("If so, please enter 1");
 
 
 
-  public static void bingoBoard(){
+  public static int[][] bingoBoard(){
     int[][] Board = new int[5][5];
     java.util.Random rand = new java.util.Random();
     for(int i = 0; i < Board.length; i++) {
