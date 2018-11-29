@@ -37,30 +37,7 @@ System.out.println("If so, please enter 1");
   	System.out.println("quit the game");
 	}
     }
-  }public class BingoDemo{
-  public static void main (String[]args){
-	int Continue=1;
-	while (Continue==1){
-    int[][] board=bingoBoard();
-  	//play the game
-      System.out.println("*   *            *****         *             *             *********            *********                 ");
-      System.out.println("*       *          *           * *           *           *                    *           *    ");
-      System.out.println("*         *        *           *   *         *          *                    *             *           ");
-      System.out.println("*        *         *           *     *       *          *                    *             *        ");
-      System.out.println("* *    *           *           *       *     *          *                    *             *        ");
-      System.out.println("*        *         *           *         *   *          *        *****       *             *       ");
-      System.out.println("*          *       *           *           * *          *            *       *             *       ");
-      System.out.println("*         *        *           *             *           *           *        *           *");
-      System.out.println("*     *          *****         *             *             **********           *********             ");
-      System.out.println("Do you want to play Bingo again?");
-System.out.println("If so, please enter 1");
-  	Continue=TextIO.getlnInt();
-	}
-	if(Continue!=1){
-  	System.out.println("quit the game");
- 	}
- }
-
+  }
 
 
   public static int[][] bingoBoard(){
@@ -74,18 +51,6 @@ System.out.println("If so, please enter 1");
   }
 }
 
-
-
-
-  public static int[][] bingoBoard(){
-    int[][] Board = new int[5][5];
-    java.util.Random rand = new java.util.Random();
-    for(int i = 0; i < Board.length; i++) {
-      for(int a=0; a< Board.length;a++){
-        Board[i][a] = rand.nextInt(25);      
-      }
-    }return Board;
-  }
 
 
 public static void printSquare(){
