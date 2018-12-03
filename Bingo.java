@@ -28,7 +28,7 @@ public static final int bingo = 1;
       if(operator==1){
 	 print();
       }
-      operator = checkDiagnoal(rows,columns);
+      operator = checkDiagonal(rows,columns);
       if(operator==1){
          print();
       }
