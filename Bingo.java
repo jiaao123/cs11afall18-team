@@ -4,24 +4,20 @@ public static int[] columns= new int[25];
 public static final int bingo = 1;
   public static void main (String[]args){
         int operator=0
-	int number=1;
+	int number=10;
 	int count = 0;
-	while (number==1){
+	while (number!=0){
     	int[][] board=bingoBoard();
   	//play the game
 	System.out.println("Enter a number or enter 0 to quit");
-  	coutinue=0;
-  	
   	number = TextIO.getlnInt();
-  	
-        	int[] location=test(board,number);
-        	rows[count]= location[0][];
-        	columns[count]= location[] [1];
-        	count++;
-        	System.out.println("Enter a number or enter 0 to quit");
-                number = TextIO.getlnInt();
+        int[] location=test(board,number);
+        rows[count]= location[0];
+        columns[count]= location[1];
+        count++;
+        System.out.println("Enter a number or enter 0 to quit");
       	}
-	if(continue==1){
+	if(number==1){
   	System.out.println("Check bingo");
 	}
       operator = checkRows(rows);
@@ -36,21 +32,6 @@ public static final int bingo = 1;
       if(operator==1){
          print();
       }
-	
-      System.out.println("*   *            *****         *             *             *********            *********                 ");
-      System.out.println("*       *          *           * *           *           *                    *           *    ");
-      System.out.println("*         *        *           *   *         *          *                    *             *           ");
-      System.out.println("*        *         *           *     *       *          *                    *             *        ");
-      System.out.println("* *    *           *           *       *     *          *                    *             *        ");
-      System.out.println("*        *         *           *         *   *          *        *****       *             *       ");
-      System.out.println("*          *       *           *           * *          *            *       *             *       ");
-      System.out.println("*         *        *           *             *           *           *        *           *");
-      System.out.println("*     *          *****         *             *             **********           *********             ");
-      System.out.println("Do you want to play Bingo again?");
-      System.out.println("If so, please enter 1");
-  	
-	
-
 }//end of main;
 
 
@@ -161,5 +142,20 @@ public static int[] test(int[][] board,int number){
   }
   return location;
 }
+	
+	
+	
+	
+System.out.println("*   *            *****         *             *             *********            *********                 ");
+      System.out.println("*       *          *           * *           *           *                    *           *    ");
+      System.out.println("*         *        *           *   *         *          *                    *             *           ");
+      System.out.println("*        *         *           *     *       *          *                    *             *        ");
+      System.out.println("* *    *           *           *       *     *          *                    *             *        ");
+      System.out.println("*        *         *           *         *   *          *        *****       *             *       ");
+      System.out.println("*          *       *           *           * *          *            *       *             *       ");
+      System.out.println("*         *        *           *             *           *           *        *           *");
+      System.out.println("*     *          *****         *             *             **********           *********             ");
+      System.out.println("Do you want to play Bingo again?");
+      System.out.println("If so, please enter 1");
 
 }//end of the class
