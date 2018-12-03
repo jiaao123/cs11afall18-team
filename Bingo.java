@@ -3,8 +3,9 @@ public static int[] rows = new int[25];
 public static int[] columns= new int[25];
 public static final int bingo = 1;
   public static void main (String[]args){
-	int Continue=1;
-	while (Continue==1){
+        int operator=0
+	int continue=1;
+	while (continue==1){
     	int[][] board=bingoBoard();
   	//play the game
 	System.out.println("Enter a number or enter 0 to quit");
@@ -17,8 +18,13 @@ public static final int bingo = 1;
         	columns[count]= location[] [1];
         	count++;
         	System.out.println("Enter a number or enter 0 to quit");
-        	number = TextIO.getlnInt();
+                number = TextIO.getlnInt();
       	}
+	if(continue==1){
+  	System.out.println("quit the game");
+	}
+     
+	
       System.out.println("*   *            *****         *             *             *********            *********                 ");
       System.out.println("*       *          *           * *           *           *                    *           *    ");
       System.out.println("*         *        *           *   *         *          *                    *             *           ");
@@ -29,12 +35,10 @@ public static final int bingo = 1;
       System.out.println("*         *        *           *             *           *           *        *           *");
       System.out.println("*     *          *****         *             *             **********           *********             ");
       System.out.println("Do you want to play Bingo again?");
-System.out.println("If so, please enter 1");
-  	Continue=TextIO.getlnInt();
+      System.out.println("If so, please enter 1");
+  	continue=TextIO.getlnInt();
 	}
-	if(Continue!=1){
-  	System.out.println("quit the game");
-	}
+
 }//end of main;
 
 
