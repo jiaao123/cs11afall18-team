@@ -4,15 +4,16 @@ public static int[] columns= new int[25];
 public static final int bingo = 1;
   public static void main (String[]args){
         int operator=0
-	int continue=1;
-	while (continue==1){
+	int number=1;
+	int count = 0;
+	while (number==1){
     	int[][] board=bingoBoard();
   	//play the game
 	System.out.println("Enter a number or enter 0 to quit");
-  	int number=0;
-  	int count = 0;
+  	coutinue=0;
+  	
   	number = TextIO.getlnInt();
-  	while (number!=0){
+  	
         	int[] location=test(board,number);
         	rows[count]= location[0][];
         	columns[count]= location[] [1];
@@ -23,7 +24,18 @@ public static final int bingo = 1;
 	if(continue==1){
   	System.out.println("Check bingo");
 	}
-     
+      operator = checkRows(rows);
+      if(operator==1){
+      	print();
+      }
+      operator = checkColumns(columns);
+      if(operator==1){
+	 print();
+      }
+      operator = checkDiagnoal(rows,columns);
+      if(operator==1){
+         print();
+      }
 	
       System.out.println("*   *            *****         *             *             *********            *********                 ");
       System.out.println("*       *          *           * *           *           *                    *           *    ");
@@ -36,8 +48,8 @@ public static final int bingo = 1;
       System.out.println("*     *          *****         *             *             **********           *********             ");
       System.out.println("Do you want to play Bingo again?");
       System.out.println("If so, please enter 1");
-  	continue=TextIO.getlnInt();
-	}
+  	
+	
 
 }//end of main;
 
