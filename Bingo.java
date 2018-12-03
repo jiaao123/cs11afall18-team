@@ -19,20 +19,26 @@ public static final int bingo = 1;
 	if(number==0){
   	System.out.println("Check bingo");
 	}
+      //check if points form a line
       operator = checkRows(rows);
       if(operator==1){
       	print();
-      }
-      operator = checkColumns(columns);
-      if(operator==1){
-	 print();
-      }
-      operator = checkDiagonal(rows,columns);
-      if(operator==1){
-         print();
-      }
-	  
-      print();
+      }//check rows
+      else{
+	operator = checkColumns(columns);
+	if(operator==1){
+	print();
+	}//check columns
+	else{
+        operator = checkDiagonal(rows,columns);
+        if(operator==1){
+          print();
+	}
+        else{
+	  System.out.println("No bingo,goodbye");
+	}
+	}//end of the second "else"
+      }//end of the first"else"
 }//end of main;
 
 
