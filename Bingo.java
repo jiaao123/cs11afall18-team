@@ -17,7 +17,7 @@ public static final int bingo = 1;
         count++;
         System.out.println("Enter a number or enter 0 to quit");
       	}
-	if(number==1){
+	if(number==0){
   	System.out.println("Check bingo");
 	}
       operator = checkRows(rows);
