@@ -142,20 +142,6 @@ public static int[] test(int[][] board,int number){
   }
   return location;
 }
-	
-	
-	
-	
-System.out.println("*   *            *****         *             *             *********            *********                 ");
-      System.out.println("*       *          *           * *           *           *                    *           *    ");
-      System.out.println("*         *        *           *   *         *          *                    *             *           ");
-      System.out.println("*        *         *           *     *       *          *                    *             *        ");
-      System.out.println("* *    *           *           *       *     *          *                    *             *        ");
-      System.out.println("*        *         *           *         *   *          *        *****       *             *       ");
-      System.out.println("*          *       *           *           * *          *            *       *             *       ");
-      System.out.println("*         *        *           *             *           *           *        *           *");
-      System.out.println("*     *          *****         *             *             **********           *********             ");
-      System.out.println("Do you want to play Bingo again?");
-      System.out.println("If so, please enter 1");
+
 
 }//end of the class
