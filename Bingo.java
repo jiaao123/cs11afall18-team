@@ -16,7 +16,7 @@ public static final int bingo = 1;
         int[] location=test(board,number);
         temp1=location[0];
 	rows[count]=temp1;
-	temp2=location[1]
+	temp2=location[1];
         columns[count]=temp2;
         count++;
       	}
