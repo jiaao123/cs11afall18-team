@@ -21,7 +21,7 @@ public static final int bingo = 1;
                 number = TextIO.getlnInt();
       	}
 	if(continue==1){
-  	System.out.println("quit the game");
+  	System.out.println("Check bingo");
 	}
      
 	
