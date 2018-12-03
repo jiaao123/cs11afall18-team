@@ -1,6 +1,6 @@
 public class BingoDemo{
-public static int[] row = new int[25];
-public static int[] column= new int[25];
+public static int[] rows = new int[25];
+public static int[] columns= new int[25];
 public static final int bingo = 1;
   public static void main (String[]args){
 	int Continue=1;
@@ -13,8 +13,8 @@ public static final int bingo = 1;
   	number = TextIO.getlnInt();
   	while (number!=0){
         	int[] location=test(board,number);
-        	row[count]= location[0][];
-        	column[count]= location[] [1];
+        	rows[count]= location[0][];
+        	columns[count]= location[] [1];
         	count++;
         	System.out.println("Enter a number or enter 0 to quit");
         	number = TextIO.getlnInt();
