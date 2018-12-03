@@ -32,8 +32,8 @@ public static final int bingo = 1;
       if(operator==1){
          print();
       }
-	  String star="*";
-      print(star);
+	  
+      print();
 }//end of main;
 
 
@@ -144,7 +144,7 @@ public static int[] test(int[][] board,int number){
   }
   return location;
 }
-  public static void print(String star){
+  public static void print(){
     System.out.println("*   *            *****         *             *             *********            *********                 ");
     System.out.println("*       *          *           * *           *           *                    *           *    ");
     System.out.println("*         *        *           *   *         *          *                    *             *           ");
