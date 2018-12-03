@@ -6,9 +6,9 @@ public static final int bingo = 1;
         int operator=0
 	int number=10;
 	int count = 0;
+	//play the game
 	while (number!=0){
     	int[][] board=bingoBoard();
-  	//play the game
 	System.out.println("Enter a number or enter 0 to quit");
   	number = TextIO.getlnInt();
         int[] location=test(board,number);
