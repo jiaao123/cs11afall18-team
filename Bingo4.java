@@ -1,6 +1,6 @@
 public class BingoDemo{
-public static int[] row = new int[25];
-public static int[] column= new int[25];
+public static int[] rows = new int[25];
+public static int[] columns= new int[25];
 public static final int bingo = 1;
   public static void main (String[]args){
 	int Continue=1;
