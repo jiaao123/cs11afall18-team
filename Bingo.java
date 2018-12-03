@@ -3,7 +3,7 @@ public static int[] rows = new int[25];
 public static int[] columns= new int[25];
 public static final int bingo = 1;
   public static void main (String[]args){
-        int operator=0
+        int operator=0;
 	int number=10;
 	int count = 0;
 	//play the game
