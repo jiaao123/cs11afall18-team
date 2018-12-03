@@ -6,14 +6,18 @@ public static final int bingo = 1;
         int operator=0;
 	int number=10;
 	int count = 0;
+	int temp1=0;
+	int temp2=0;
 	//play the game
 	while (number!=0){
     	int[][] board=bingoBoard();
 	System.out.println("Enter a number or enter 0 to quit");
   	number = TextIO.getlnInt();
         int[] location=test(board,number);
-        rows[count]= location[0];
-        columns[count]= location[1];
+        temp1=location[0];
+	rows[count]=temp1;
+	temp2=location[1]
+        columns[count]=temp2;
         count++;
       	}
 	if(number==0){
