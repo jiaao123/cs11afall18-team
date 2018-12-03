@@ -15,6 +15,7 @@ public static final int bingo = 1;
         rows[count]= location[0];
         columns[count]= location[1];
         count++;
+        System.out.println("Enter a number or enter 0 to quit");
       	}
 	if(number==1){
   	System.out.println("Check bingo");
@@ -31,6 +32,8 @@ public static final int bingo = 1;
       if(operator==1){
          print();
       }
+	  String star="*";
+      print(star);
 }//end of main;
 
 
@@ -141,6 +144,18 @@ public static int[] test(int[][] board,int number){
   }
   return location;
 }
+  public static void print(String star){
+    System.out.println("*   *            *****         *             *             *********            *********                 ");
+    System.out.println("*       *          *           * *           *           *                    *           *    ");
+    System.out.println("*         *        *           *   *         *          *                    *             *           ");
+    System.out.println("*        *         *           *     *       *          *                    *             *        ");
+    System.out.println("* *    *           *           *       *     *          *                    *             *        ");
+    System.out.println("*        *         *           *         *   *          *        *****       *             *       ");
+    System.out.println("*          *       *           *           * *          *            *       *             *       ");
+    System.out.println("*         *        *           *             *           *           *        *           *");
+    System.out.println("*     *          *****         *             *             **********           *********             ");
+
+  }
 
 
 }//end of the class
