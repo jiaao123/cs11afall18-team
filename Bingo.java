@@ -15,7 +15,6 @@ public static final int bingo = 1;
         rows[count]= location[0];
         columns[count]= location[1];
         count++;
-        System.out.println("Enter a number or enter 0 to quit");
       	}
 	if(number==0){
   	System.out.println("Check bingo");
