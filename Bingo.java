@@ -3,57 +3,56 @@ public static int[] rows = new int[25];
 public static int[] columns= new int[25];
 public static final int bingo = 1;
   public static void main (String[]args){
-        int operator=0;
-	int number=10;
-	int count = 0;
+  int operator=0;
+	int number=1;
+	int count =0;
 	int temp1=0;
 	int temp2=0;
+  int[] board=bingoBoard();
 	//play the game
 	while (number!=0){
-    	int[][] board=bingoBoard();
-	System.out.println("Enter a number or enter 0 to quit");
+	  System.out.println("Enter a number or enter 0 to quit");
   	number = TextIO.getlnInt();
-        int[] location=test(board,number);
-        temp1=location[0];
-	rows[count]=temp1;
-	temp2=location[1];
-        columns[count]=temp2;
-        count++;
-      	}
+    int[] location=test(board,number);
+    temp1=location[0];
+	  rows[count]=temp1;
+	  temp2=location[1];
+    columns[count]=temp2;
+    count++;
+    }
 	if(number==0){
   	System.out.println("Check bingo");
 	}
       //check if points form a line
-      operator = checkRows(rows);
-      if(operator==1){
-      	print();
-      }//check rows
-      else{
+  operator = checkRows(rows);
+  if(operator==1){
+    print();
+  }//check rows
+  else{
 	operator = checkColumns(columns);
-	if(operator==1){
-	print();
-	}//check columns
-	else{
+	  if(operator==1){
+	    print();
+	  }//check columns
+	  else{
         operator = checkDiagonal(rows,columns);
         if(operator==1){
           print();
-	}
+	      }
         else{
-	  System.out.println("No bingo,goodbye");
-	}
-	}//end of the second "else"
-      }//end of the first"else"
+	      System.out.println("No bingo,goodbye");
+	      }
+	    }//end of the second "else"
+    }//end of the first"else"
 }//end of main;
 
 
-  public static int[][] bingoBoard(){
-    int[][] Board = new int[5][5];
+  public static int[] bingoBoard(){
+    int[] Board = new int[25];
     java.util.Random rand = new java.util.Random();
     for(int i = 0; i < Board.length; i++) {
-      for(int a=0; a< Board.length;a++){
-        Board[i][a] = rand.nextInt(25);
-      }
-    }return Board;
+        Board[i] = rand.nextInt(25);
+    }
+    return Board;
   }//end of bingoBoard
 
 
@@ -80,7 +79,6 @@ public static void printSquare(){
           System.out.printf("-----");
           }
           System.out.println();
-
       }
       System.out.println();
 
@@ -139,20 +137,28 @@ public static int checkDiagonal(int[] rows,int[] columns){
 
 
 
-public static int[] test(int[][] board,int number){
-  int[] location = new int[2];
-  int num = TextIO.getlnInt();
-  for (int i=0; i<5; i++){
-    for (int j=0; j<5; j++){
-      if (num == board[i][j]){
-        location[0] = i;
-        location[1] = j;
-      }else{
-      }
+public static int[] test(int[] board,int number){
+  int point[]=new int[2];
+  int location=0;
+  int noRow=0;
+  int noColumn=0;
+  for(int i=0;i<board.length;i++){
+    if(number==board[i]){
+      location=i;
+      break;
     }
   }
-  return location;
-}
+  if((location+1)%5==0){
+    noRow=location/5;
+  }
+  else{
+   noRow=((location+1)/5)+1;
+  }
+  noColumn=(location+1)-((noRow-1)*5);
+  point[0]=noRow;
+  point[1]=noColumn;
+  return point;
+}//end of test
   public static void print(){
     System.out.println("*   *            *****         *             *             *********            *********                 ");
     System.out.println("*       *          *           * *           *           *                    *           *    ");
@@ -165,6 +171,4 @@ public static int[] test(int[][] board,int number){
     System.out.println("*     *          *****         *             *             **********           *********             ");
 
   }
-
-
 }//end of the class
