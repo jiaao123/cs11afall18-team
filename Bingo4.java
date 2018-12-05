@@ -38,7 +38,7 @@ public class BingoDemo{
 
 
   public static int[] bingoBoard(int range){
-    int[] Board = new int[range];
+    int[] Board = new int[25];
     java.util.Random rand = new java.util.Random();
     for(int i = 0;i < Board.length; i++) {
       Board[i] =rand.nextInt(range);
