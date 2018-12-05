@@ -105,4 +105,4 @@ public static void printBingo(){
   System.out.println("*     *          *****         *             *             **********           *********             ");
   }
 }
-//end of class
+//end of class.
