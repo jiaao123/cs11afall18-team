@@ -2,9 +2,9 @@ import java.util.Scanner;
 public class BingoDemo{
   public static void main (String[]args){
     Scanner console = new Scanner(System.in);
-    System.out.println("Enter the range of the random numbers in the bingo board (eg.25): ");
-    int range=console.nextInt();
-    int[] board=bingoBoard(range);
+
+
+    int[] board=bingoBoard();
     int number=1;
     int[] store=new int[25];
     while (number!=0){
@@ -37,11 +37,11 @@ public class BingoDemo{
 
 
 
-  public static int[] bingoBoard(int range){
+  public static int[] bingoBoard(){
     int[] Board = new int[25];
     java.util.Random rand = new java.util.Random();
     for(int i = 0;i < Board.length; i++) {
-      Board[i] =rand.nextInt(range);
+      Board[i] =rand.nextInt(25);
       }return Board;
   }//end of bingoBoard
 
