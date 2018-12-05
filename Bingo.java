@@ -19,11 +19,10 @@ public static int count=0;
     if(number!=0){
     test(board,number);
     checkEverything(rows,columns);
-     System.out.println("The rows of each point are"+java.util.Arrays.toString(rows));
      }
     }
 
-    System.out.println("The board is"+java.util.Arrays.toString(board));
+    System.out.println("The board is "+java.util.Arrays.toString(board));
     if(countNumber==0&&number==0){
     System.out.println("Game closed");
   }
