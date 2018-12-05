@@ -2,44 +2,47 @@ public class BingoDemo{
 public static int[] rows = new int[50];
 public static int[] columns= new int[50];
 public static final int bingo = 1;
+
   public static void main (String[]args){
 	int number=1;
-	int count =0;
-	int temp1=0;
-	int temp2=0;
   int countNumber=0;
-  int[] board=bingoBoard();
+  int range=0;
 	//play the game
+  System.out.println("Enter the range of the board");
+  range=TextIO.getlnInt();
+  int[] board=bingoBoard(range);
+
 	while (number!=0){
 	  System.out.println("Enter a number or enter 0 to quit");
   	number = TextIO.getlnInt();
     countNumber++;
     int[] point=test(board,number);
-    for(int i=0;i<point.length/2;i++){
-      temp1=point[2*i];
-  	  rows[count]=temp1;
-  	  temp2=point[2*i+1];
-      columns[count]=temp2;
-      count++;
+    addPosToArray(point);
     }
-    }
-  //check if there are number inputs
-	if(number==0&&countNumber>0){
-  	System.out.println("Check bingo");
-    //check if points form a line
-   checkEverything(rows,columns);
-   //print out the board
-   System.out.println(java.util.Arrays.toString(board));
-   //print out the points hit
-   for(int i=0;i<count-1;i++){
-   System.out.println("("+rows[i]+","+columns[i]+") ");
-   }
-	}
-  //no number inputs, game closes
-  else{
+    checkEverything(rows,columns);
+    System.out.println(java.util.Arrays.toString(board));
+    if(countNumber==0&&number==0){
     System.out.println("Game closed");
   }
 }//end of main;
+public static void addPosToArray(int[] point){
+  int temp1;
+  int temp2;
+  int count=0;
+  if(point[0]>0&&point[1]>0){
+  for(int i=0;i<point.length/2;i++){
+    temp1=point[2*i];
+    rows[count]=temp1;
+    temp2=point[2*i+1];
+    columns[count]=temp2;
+    count++;
+  }
+  for(int a=0;a<count;a++){
+  System.out.println("("+rows[a]+","+columns[a]+") ");
+}
+
+}
+}
 
 public static void checkEverything(int[] rows,int[] columns){
   int operator=0;
@@ -64,12 +67,12 @@ public static void checkEverything(int[] rows,int[] columns){
     }
 }
 
-  public static int[] bingoBoard(){
+  public static int[] bingoBoard(int range){
     int temp=0;
     int[] Board = new int[25];
     java.util.Random rand = new java.util.Random();
     for(int i=0;i<Board.length;i++){
-      temp=(rand.nextInt(10));
+      temp=(rand.nextInt(range));
       Board[i]=temp+1;
     }
     return Board;
