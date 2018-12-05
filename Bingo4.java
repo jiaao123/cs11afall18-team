@@ -27,7 +27,6 @@ public class BingoDemo{
         column=5;
       }
       System.out.printf("(%d, %d)%n",((i)/5)+1,column);
-     //System.out.println(store[i]);
 
       }
     }
@@ -47,6 +46,7 @@ public class BingoDemo{
 
 
   public static void printBingo(){
+    int[] board=bingoBoard();
     System.out.println("*   *            *****         *             *             *********            *********                 ");
     System.out.println("*       *          *           * *           *           *                    *           *    ");
     System.out.println("*         *        *           *   *         *          *                    *             *           ");
@@ -56,6 +56,21 @@ public class BingoDemo{
     System.out.println("*          *       *           *           * *          *            *       *             *       ");
     System.out.println("*         *        *           *             *           *           *        *           *");
     System.out.println("*     *          *****         *             *             **********           *********             ");
+    for(int i=0;i<5;i++){
+      System.out.printf("%5s",board[i]);
+    }System.out.println();
+    for(int i=5;i<10;i++){
+      System.out.printf("%5s",board[i]);
+    }System.out.println();
+    for(int i=10;i<15;i++){
+      System.out.printf("%5s",board[i]);
+    }System.out.println();
+    for(int i=15;i<20;i++){
+      System.out.printf("%5s",board[i]);
+    }System.out.println();
+    for(int i=20;i<25;i++){
+      System.out.printf("%5s",board[i]);
+    }System.out.println();
   }
 
 
