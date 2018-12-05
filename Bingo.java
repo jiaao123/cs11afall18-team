@@ -8,9 +8,7 @@ public class BingoGame{
 
   public static void main(String[] args){
     int number=1;
-    int start=1;
     Scanner sc = new Scanner(System.in);
-    while (start!=0)
     System.out.println("What is the range of the bingo board?");
     int range=sc.nextInt();
 
@@ -105,4 +103,4 @@ public static void printBingo(){
   System.out.println("*     *          *****         *             *             **********           *********             ");
   }
 }
-//end of class.
+//end of class
