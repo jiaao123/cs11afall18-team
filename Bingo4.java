@@ -56,13 +56,6 @@ public class BingoDemo{
     System.out.println("*     *          *****         *             *             **********           *********             ");
   }
 
-  public static void printSquare(){
-
-  }
-
-
-
-
 
   public static void rows(int[] store){
     if(store[0]==100&&store[5]==100&&store[10]==100&&store[15]==100&&store[20]==100){
