@@ -83,6 +83,6 @@ public class BingoDemo{
     }if(store[4]==100&&store[8]==100&&store[12]==100&&store[16]==100&&store[20]==100){
       printBingo();
     }
-//end of rows;
-  }
+  }//end of rows;
+  
 }//end of the class
