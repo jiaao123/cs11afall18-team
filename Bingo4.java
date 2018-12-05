@@ -12,6 +12,7 @@ public class BingoDemo{
       store[location]=100;
       rows(store);
     }
+
   }
 
   public static int test(int[] board,int[] store,int number){
@@ -19,6 +20,11 @@ public class BingoDemo{
     for(int i=0;i<board.length;i++){
       if(number==board[i]){
       loc=i;
+      int column=(loc+1)%5;
+      if(column==0){
+        column=5;
+      }
+      System.out.printf("(%d, %d)%n",((i)/5)+1,column);
      //System.out.println(store[i]);
 
       }
@@ -27,8 +33,10 @@ public class BingoDemo{
   }
 
 
+
+
   public static int[] bingoBoard(){
-   int[] Board = {21,1,10,17,9,18,22,13,15,3,5,12,25,11,6,2,19,7,16,4,24,14,20,23,8};
+   int[] Board = {21,1,10,17,9,18,22,13,15,3,5,12,25,11,6,2,19,7,16,4,24,14,20,23,21};
     //  java.util.Random rand = new java.util.Random();
     //  for(int i = 0;i < Board.length; i++) {
     // Board[i] =rand.nextInt(25);
@@ -37,36 +45,64 @@ public class BingoDemo{
   //}//end of bingoBoard
 
 
+  public static void printBingo(){
+    System.out.println("*   *            *****         *             *             *********            *********                 ");
+    System.out.println("*       *          *           * *           *           *                    *           *    ");
+    System.out.println("*         *        *           *   *         *          *                    *             *           ");
+    System.out.println("*        *         *           *     *       *          *                    *             *        ");
+    System.out.println("* *    *           *           *       *     *          *                    *             *        ");
+    System.out.println("*        *         *           *         *   *          *        *****       *             *       ");
+    System.out.println("*          *       *           *           * *          *            *       *             *       ");
+    System.out.println("*         *        *           *             *           *           *        *           *");
+    System.out.println("*     *          *****         *             *             **********           *********             ");
+  }
+
+  public static void printSquare(){
+
+  }
+
+
 
 
 
   public static void rows(int[] store){
     if(store[0]==100&&store[5]==100&&store[10]==100&&store[15]==100&&store[20]==100){
-      System.out.println("Bingo!");
+      //System.out.println("Bingo!");
+      printBingo();
     }if(store[1]==100&&store[6]==100&&store[11]==100&&store[16]==100&&store[21]==100){
-      System.out.println("Bingo!");
+      //System.out.println("Bingo!");
+      printBingo();
     }if(store[2]==100&&store[7]==100&&store[12]==100&&store[17]==100&&store[22]==100){
-      System.out.println("Bingo!");
+      //System.out.println("Bingo!");
+      printBingo();
     }if(store[3]==100&&store[8]==100&&store[13]==100&&store[18]==100&&store[23]==100){
-      System.out.println("Bingo!");
+      //System.out.println("Bingo!");
+      printBingo();
     }if(store[4]==100&&store[9]==100&&store[14]==100&&store[19]==100&&store[24]==100){
-      System.out.println("Bingo!");
+      //System.out.println("Bingo!");
+      printBingo();
     }if(store[0]==100&&store[1]==100&&store[2]==100&&store[3]==100&&store[4]==100){
-      System.out.println("Bingo!");
+      //System.out.println("Bingo!");
+      printBingo();
     }if(store[5]==100&&store[6]==100&&store[7]==100&&store[8]==100&&store[9]==100){
-      System.out.println("Bingo!");
+      //System.out.println("Bingo!");
+      printBingo();
     }if(store[10]==100&&store[11]==100&&store[12]==100&&store[13]==100&&store[14]==100){
-      System.out.println("Bingo!");
+      //System.out.println("Bingo!");
+      printBingo();
     }if(store[15]==100&&store[16]==100&&store[17]==100&&store[18]==100&&store[19]==100){
-      System.out.println("Bingo!");
+      //System.out.println("Bingo!");
+      printBingo();
     }if(store[20]==100&&store[21]==100&&store[22]==100&&store[23]==100&&store[24]==100){
-      System.out.println("Bingo!");
+      //System.out.println("Bingo!");
+      printBingo();
     }if(store[0]==100&&store[6]==100&&store[12]==100&&store[18]==100&&store[24]==100){
-      System.out.println("Bingo!");
+      //System.out.println("Bingo!");
+      printBingo();
     }if(store[4]==100&&store[8]==100&&store[12]==100&&store[16]==100&&store[20]==100){
-      System.out.println("Bingo!");
+      //System.out.println("Bingo!");
+      printBingo();
     }
 //end of rows;
   }
 }//end of the class
-
