@@ -1,7 +1,7 @@
 public class BingoDemo{
 public static int[] rows = new int[50];
 public static int[] columns= new int[50];
-public static final int bingo = 1;
+public static int count=0;
 
   public static void main (String[]args){
 	int number=1;
@@ -16,55 +16,36 @@ public static final int bingo = 1;
 	  System.out.println("Enter a number or enter 0 to quit");
   	number = TextIO.getlnInt();
     countNumber++;
-    int[] point=test(board,number);
-    addPosToArray(point);
-    }
+    if(number!=0){
+    test(board,number);
     checkEverything(rows,columns);
-    System.out.println(java.util.Arrays.toString(board));
+     System.out.println("The rows of each point are"+java.util.Arrays.toString(rows));
+     }
+    }
+
+    System.out.println("The board is"+java.util.Arrays.toString(board));
     if(countNumber==0&&number==0){
     System.out.println("Game closed");
   }
-}//end of main;
-public static void addPosToArray(int[] point){
-  int temp1;
-  int temp2;
-  int count=0;
-  if(point[0]>0&&point[1]>0){
-  for(int i=0;i<point.length/2;i++){
-    temp1=point[2*i];
-    rows[count]=temp1;
-    temp2=point[2*i+1];
-    columns[count]=temp2;
-    count++;
-  }
-  for(int a=0;a<count;a++){
-  System.out.println("("+rows[a]+","+columns[a]+") ");
-}
 
-}
-}
+}//end of main;
 
 public static void checkEverything(int[] rows,int[] columns){
-  int operator=0;
-  operator = checkRows(rows);
-  if(operator==1){
+  int operator1=0;
+  int operator2=0;
+  int operator3=0;
+  operator1 = checkRows(rows);
+  operator2 = checkColumns(columns);
+  operator3 = checkDiagonal(rows,columns);
+
+
+  if(operator1==1||operator2==1||operator3==1){
     print();
-  }//check rows
+  }
   else{
-	operator = checkColumns(columns);
-	  if(operator==1){
-	    print();
-	  }//check columns
-	  else{
-        operator = checkDiagonal(rows,columns);
-        if(operator==1){
-          print();
-	      }
-        else{
-	      System.out.println("No bingo,goodbye");
-	      }
-      }
-    }
+    System.out.println("no bingo");
+  }
+
 }
 
   public static int[] bingoBoard(int range){
@@ -77,37 +58,6 @@ public static void checkEverything(int[] rows,int[] columns){
     }
     return Board;
   }//end of bingoBoard
-
-
-
-public static void printSquare(){
-
-      System.out.print("     ");
-      for (int i=0;i<=5;i++){
-        System.out.printf("-----");//first line
-      }
-        System.out.println();
-
-      for (int j=1;j<=5;j++){
-        System.out.printf("%6s","|");
-
-          for (int i=1;i<=5;i++){
-            System.out.print(j+"/"+i+"  |");
-          }
-
-          System.out.println();
-          System.out.print("     ");
-
-          for (int i=0;i<=5;i++){
-          System.out.printf("-----");
-          }
-          System.out.println();
-      }
-      System.out.println();
-
-  }//end of printSquare
-
-
 
 public static int checkRows(int[] rows){
     int counter0=0;
@@ -172,7 +122,7 @@ public static int checkDiagonal(int[] rows,int[] columns){
 
 
 
-public static int[] test(int[] board,int number){
+public static void test(int[] board,int number){
   int location[]=new int[25];
   int counter=0;
   for(int i=0;i<board.length;i++){
@@ -183,20 +133,17 @@ public static int[] test(int[] board,int number){
     }
   }
   if(counter>0){
-    int[] point1=locationToPoint(location,counter);
-    int[] point=newArray(point1,counter);
-    return point;
+    locationToPoint(location,counter);
   }
   else{
-      int[] noMatch={0,0};
-      return noMatch;
+    System.out.println("no match");
     }
 }//end of test
 
-public static int[] locationToPoint(int[] location,int counter){
-  int point1[]=new int[50];
+public static void locationToPoint(int[] location,int counter){
 
-  for(int a=0;a<=counter;a++){
+  int a=0;
+  while(a<counter){
     int lo=location[a];
     int row=0;
     int column=0;
@@ -215,22 +162,15 @@ public static int[] locationToPoint(int[] location,int counter){
     else{
       row=5;column=lo-20+1;
     }
-    point1[2*a]=row;
-    point1[2*a+1]=column;
+    rows[count]=row;
+    columns[count]=column;
+    count++;
+    System.out.println("("+row+","+column+")");
+    a++;
   }
-  return point1;
+
 }//end of locationToPoint
 
-
- public static int[] newArray(int[] point1,int counter){
-   int[] point=new int[counter*2];
-   int temp3=0;
-   for(int b=0;b<counter*2;b++){
-     temp3=point1[b];
-     point[b]=temp3;
-   }
-   return point;
- }//end of newArray
   public static void print(){
     System.out.println("*   *            *****         *             *             *********            *********                 ");
     System.out.println("*       *          *           * *           *           *                    *           *    ");
