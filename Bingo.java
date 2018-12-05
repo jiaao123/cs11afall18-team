@@ -26,7 +26,13 @@ public static int count=0;
     if(countNumber==0&&number==0){
     System.out.println("Game closed");
   }
-
+  for(int i=1;i<6;i++){
+    for(int a=1;a<6;a++){
+      int pos=a*i-1;
+      System.out.print(board[pos]+" ");
+    }
+    System.out.println();
+  }
 }//end of main;
 
 public static void checkEverything(int[] rows,int[] columns){
