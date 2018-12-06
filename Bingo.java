@@ -4,29 +4,38 @@ import java.util.Scanner;
 public class BingoGame{
   public static int[] location=new int[25];
   public static int count=0;
-
-
   public static void main(String[] args){
-    int number=1;
-    Scanner sc = new Scanner(System.in);
-    System.out.println("What is the range of the bingo board?");
-    int range=sc.nextInt();
+    boolean keepGoing=true;
 
+    while(keepGoing){
+    emptyLocation();
+    Scanner sc = new Scanner(System.in);
+    System.out.println("What is the range of the bingo board(Enter a positive integer)?");
+    int range=sc.nextInt();
     int[] board=boardGenerator(range);
+    int number=1;
+
     while (number!=0){
+     Scanner sc2=new Scanner(System.in);
      System.out.println("Enter a number or enter 0 to quit");
-     number = TextIO.getlnInt();
-      test(number,board);
-      printBoard(board);
-      boolean operator=check();
-      if(operator){
+     number = sc2.nextInt();
+     if(number>0){
+     test(number,board);
+     printBoard(board);
+     boolean operator=check();
+     if(operator){
         System.out.printf("%n Bingo %n");
         printBingo();
         number=0;
+        }
       }
-    }//end of while
+    }//end of game
+  Scanner sc1=new Scanner(System.in);
+  System.out.println("Wanna play another round? true or false");
+  keepGoing = sc1.nextBoolean();
+  }//end of the recursive loop
+}//end of main
 
-  }//end of main
 public static void test(int number,int[] board){
    for(int i=0;i<board.length;i++){
      if(number==board[i]){
@@ -102,5 +111,12 @@ public static void printBingo(){
   System.out.println("*         *        *           *             *           *           *        *           *");
   System.out.println("*     *          *****         *             *             **********           *********             ");
   }
+
+public static void emptyLocation(){
+  for(int i=0;i<location.length;i++){
+    location[i]=0;
+  }
+}//end of emptyLocation
+
 }
 //end of class
